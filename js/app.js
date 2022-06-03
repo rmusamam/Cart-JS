@@ -41,7 +41,7 @@
        // console.log(item);
 
        const cartItem = document.createElement('div');
-       cartItem.classList('cart-Item','d-flex','justify-content-between','text-capitalize','my-3');
+       cartItem.classList.add('cart-Item','d-flex','justify-content-between','text-capitalize','my-3');
 
        cartItem.innerHTML=` 
        <img src="${item.img}" class="img-fluid 
@@ -57,7 +57,17 @@
          <i class="fas fa-trash"></i>
        </a>
      </div>`;
-      }
+
+     // select Cart 
+
+     const cart = document.getElementById('cart');
+     const total = document.querySelector('.cart-total-container')
+      
+     cart.insertBefore(cartItem,total);
+     alert('Item added to cart')
+    
+    
+    }
     });
   });
 })();
